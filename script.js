@@ -33,8 +33,8 @@ for (let i = 0; i < items.length; i++) {
     `<div class="item">
         <img src="${items[i]}">
         <div class="text">
-            <h3></h3>
-            <p></p>
+            <h3>${title[i]}</h3>
+            <p>${text[i]}</p>
         </div>
     </div>`;
 
@@ -56,6 +56,19 @@ document.querySelector(".next").addEventListener('click',
     function() {
 
         activePosition = activePosition + 1;
+
+        document.querySelector(".item.active").classList.remove("active");
+        document.getElementsByClassName("item")[activePosition].classList.add("active")
+
+        document.querySelector(".thumb.active").classList.remove("active");
+        document.getElementsByClassName("thumb")[activePosition].classList.add("active")
+    }
+);
+
+document.querySelector(".prev").addEventListener('click', 
+    function() {
+
+        activePosition = activePosition - 1;
 
         document.querySelector(".item.active").classList.remove("active");
         document.getElementsByClassName("item")[activePosition].classList.add("active")

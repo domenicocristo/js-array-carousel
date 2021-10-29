@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: gray;
+}
+
 .container {
     height: 500px;
     width: 1000px;
@@ -11,9 +15,22 @@
     position: relative;
 }
 
-.items img {
+.item img {
     height: 500px;
     width: 800px;
+}
+
+.item {
+    display: none;
+}
+
+.active {
+    display: inline-block;
+}
+
+.active.thumb img {
+    border: 3px solid #fff;
+    filter: brightness(1);
 }
 
 .prev, 
@@ -34,13 +51,14 @@
     position: absolute;
     bottom: 2px;
     right: 80px;
-}
+} 
 
 .text {
     position: absolute;
     bottom: 50px;
     right: 250px;
     color: #fff;
+    margin-left: 20px;
 }
 
 .thumbs {
@@ -58,4 +76,5 @@
 .thumb img {
     height: 100px;
     width: 200px;
+    filter: brightness(0.5);
 }
